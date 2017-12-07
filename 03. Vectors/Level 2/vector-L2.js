@@ -62,25 +62,28 @@ if(!Array.prototype.equals) {
 
   Complete the following:
 
-   1. [ ] .resize() must double of half the storage as-needed.  When halving, you can use the formula
+   1. [x] .resize() is already implemented to double in size
+   2. [ ] .add() re-implement with no built-in function calls. Resize if necessary
+   3. [ ] .insert() re-implement with no built-in function calls.  Resize if necessary.
+   4. [ ] .remove() re-implement with no built-in function calls.  Resize if necessary.
+
+   5. [ ] .resize() must double of half the storage as-needed.  When halving, you can use the formula
            (floor(maxCapacity / 2).  IDEA: It might be better to supply an argument that indicates
            the desired storage size, and whether its an add() or remove() operation requesting it.
            Or not.  It's up to you.
-      [ ] Don't expand beyond maxCapacity or below minCapacity.
 
-   2. [ ] .add() re-implement with no built-in function calls.  Resize if necessary.
-      [ ] .insert() re-implement with no built-in function calls.  Resize if necessary.
-      [ ] .remove() re-implement with no built-in function calls.  Resize if necessary.
+   ?  [ ] Don't expand beyond maxCapacity or below minCapacity.
 
 
   BONUS: Only complete this after the others.
 
-   3. [ ] After adding (capacity - 1) items, log the v.storage array.  Also the v.toArray().  Observe
+   6. [ ] After adding (capacity - 1) items, log the v.storage array.  Also the v.toArray().  Observe
            the differences.
-      [ ] Add a couple more items, and log them again and observe.
-      [ ] Remove a few until (capacity - 3).  Log them again and observe.
-      [ ] Be able to explain why they do not match.
-      [ ] Be able to explain why that is okay.
+   7. [ ] Add a couple more items, and log them again and observe.
+   8. [ ] Remove a few until (capacity - 3).  Log them again and observe.
+   9. [ ] Be able to explain why they do not match.
+  10. [ ] Be able to explain why that is okay.
+
 
   NOTE: Try to re-use functions when possible, don't repeat yourself (DRY)
   NOTE: Don't worry about edge-cases, error checking, or bounds checking
