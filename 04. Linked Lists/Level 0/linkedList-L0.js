@@ -47,19 +47,19 @@ var tail = null;
 //
 // EASY
 //
-//   1. [ ]  Write a function that takes data as input and returns a new instance of
+//   1. [x]  Write a function that takes data as input and returns a new instance of
 //            LinkedListNode using that data
-//   2. [ ]  Extend that function to set the head to the new node if head is null.
-//   3. [ ]  Write a function that takes data as input and always adds the new node
+//   2. [x]  Extend that function to set the head to the new node if head is null.
+//   3. [x]  Write a function that takes data as input and always adds the new node
 //            at the beginning of the list and makes it the new head.  If there isn't
 //            already a head, the new node becomes the head.
-//   4. [ ]  Write a function that takes data as input and always adds the new node
+//   4. [x]  Write a function that takes data as input and always adds the new node
 //            immediately after the head.  If there isn't already a head, the new node
 //            becomes the head.
-//   5. [ ]  Extend all previous functions to make the very first node added to both
+//   5. [x]  Extend all previous functions to make the very first node added to both
 //            the head and the tail -- keeping in mind that only the last node in the
-//            list should ever be the tail (even if there's only 1 node).
-//   6. [ ]  Write a function that takes data as input and adds the new node after
+//            list should ever be the tail (even if there's only 1 node). //**EXTENDED INITIAL FUNCTION**//
+//   6. [x]  Write a function that takes data as input and adds the new node after
 //            the current tail.  If there isn't a tail, then make it the first node
 //            in the list.
 //   7. [ ]  Write a function that removes the current head.
@@ -87,3 +87,40 @@ var tail = null;
 //       and array of just the data in the linked list in the same order of nodes in
 //       the list.
 //
+
+
+function createNode(data){
+let node = new LinkedListNode(data);
+ if( head == null){
+   head = node;  
+ }elseif(tail == null){
+  let tail = new LinkedListNode(data)
+  tail = tail
+ }else{
+   return node;
+ }
+}
+
+
+function insertNewHead(data){
+  let node = new LinkedListNode(data); 
+head = node;
+let current = head 
+node = current.next
+}
+
+function addNodeToTail(data){
+  let node = new LinkedListNode(data); 
+  if(head != null && tail == null){
+    tail = node; 
+  }
+}
+
+function removeCurrentHead(head){
+  
+}
+
+
+
+
+
