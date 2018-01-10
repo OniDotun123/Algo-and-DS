@@ -62,7 +62,7 @@ var tail = null;
 //   6. [x]  Write a function that takes data as input and adds the new node after
 //            the current tail.  If there isn't a tail, then make it the first node
 //            in the list.
-//   7. [ ]  Write a function that removes the current head.
+//   7. [x]  Write a function that removes the current head.
 //   8. [ ]  Write a function that removes the node after the current head.
 //         [ ] What happens if that was the tail?  Make it do the right thing.
 //
@@ -105,8 +105,8 @@ let node = new LinkedListNode(data);
 function insertNewHead(data){
   let node = new LinkedListNode(data); 
 head = node;
-let current = head 
-node = current.next
+let current = head; 
+node = current.next;
 }
 
 function addNodeToTail(data){
@@ -116,8 +116,20 @@ function addNodeToTail(data){
   }
 }
 
-function removeCurrentHead(head){
+function removeCurrentHead(node){
+  let currentNode = head;
+  if(node.next =! null && node.previous == null){
+   let currentNode.next = head;
+    head.previous.delete();  
+  }
   
+}
+
+function removeNodeAfterCurrentHead(){
+  if(node.previous == null && node.next != null){
+    let current.next = head;
+    head.previous.delete();
+  }
 }
 
 
