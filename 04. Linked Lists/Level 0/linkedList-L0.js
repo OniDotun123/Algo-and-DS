@@ -102,7 +102,35 @@ let node = new LinkedListNode(data);
 }
 
 
-function insertNewHead(data){
+// new node
+// node.next = head.next
+// head.next = node
+//
+//   { 1 } -> { 2 } -> ...
+//
+// 1: New Node
+//
+//   { x }    { 1 } -> { 2 } -> ...
+//
+// 2: node.next = head.next
+//
+//              H
+//   { x }    { 1 } -> { 2 } -> ...
+//       +---------------^
+//
+// 3: head.next = node
+//
+//     H
+//   { 1 } -> { x } -> { 2 } -> ...
+//
+//
+// If you skip #2
+//
+//      H
+//    { 1 } -> { x }    |     { 2 } -> ...
+//
+
+function insertAfterHead(data){
   let node = new LinkedListNode(data); 
 head = node;
 let current = head; 
