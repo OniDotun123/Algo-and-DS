@@ -137,6 +137,28 @@ let current = head;
 node = current.next;
 }
 
+// new node
+// tail.next = node
+// tail = node;
+
+
+//
+//    H  T
+//    null
+//
+// 1: create first node for list
+//      H  T
+//    { fist }
+//
+// else
+//      H            T
+//    { first } -> { other }
+//
+// else
+//      H                          T
+//    { first } -> { middle } -> { last }
+//
+
 function addNodeToTail(data){
   let node = new LinkedListNode(data); 
   if(head != null && tail == null){
