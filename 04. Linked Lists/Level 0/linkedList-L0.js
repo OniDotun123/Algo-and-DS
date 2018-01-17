@@ -221,20 +221,20 @@ function removeCurrentHead(node){
 
 function removeNodeAfterCurrentHead(){
   if(head.next != null ){
-    tempNode = head.next
-    head = tempNode.next
+    tempNode = head.next;
+    head = tempNode.next;
   }else{
     let node = new LinkedListNode(); 
-    node = head
-    node = tail
+    node = head;
+    node = tail;
   }
 }
 
 function returnNodePosition(first,index_input){
     if(first.next === index_input){
-      return first.next   
+      return first.next ;  
     }else{
-      first = first.next
+      first = first.next;
     }
 }
 
