@@ -63,16 +63,16 @@ var tail = null;
 //            the current tail.  If there isn't a tail, then make it the first node
 //            in the list.
 //   7. [x]  Write a function that removes the current head.
-//   8. [ ]  Write a function that removes the node after the current head.
+//   8. [x]  Write a function that removes the node after the current head.
 //         [ ] What happens if that was the tail?  Make it do the right thing.
 //
 // MEDIUM
 //
-//   9. [ ] Write a function that takes head (don't call it head) and an index as input
+//   9. [x] Write a function that takes head (don't call it head) and an index as input
 //           and returns the node at that position in the linked list, assuming head
 //           is position 0 and head.next is position 1, etc.
 //  10. [ ] Extend the previous function to return the previous node (if any).
-//  11. [ ] Write a function that removes the current tail.  What node becomes the new
+//  11. [x] Write a function that removes the current tail.  What node becomes the new
 //           tail?  Make it do the right thing.
 //
 // HARD
@@ -131,11 +131,25 @@ let node = new LinkedListNode(data);
 //
 
 function insertAfterHead(data){
-  let node = new LinkedListNode(data); 
-head = node;
-let current = head; 
-node = current.next;
+  let node = new LinkedListNode(data);
+  if(node.head == null && node.tail == null){
+    head = node 
+    tail = node 
+  }elseif(head == tail){
+    node.next = head.next;
+    head.next = node;
+    tail = node;
+  }else{
+    node.next = head.next
+    head.next = node; 
+  }
 }
+
+
+
+
+
+
 
 // new node
 // tail.next = node
@@ -159,26 +173,80 @@ node = current.next;
 //    { first } -> { middle } -> { last }
 //
 
+
+
+
+
+
+
 function addNodeToTail(data){
   let node = new LinkedListNode(data); 
-  if(head != null && tail == null){
-    tail = node; 
+  if(head == null && tail == null){
+    node = head; 
+    node = tail;
+  }else{
+ tail.next = node;
+ tail = node;
   }
 }
 
 function removeCurrentHead(node){
-  let currentNode = head;
-  if(node.next =! null && node.previous == null){
-   let currentNode.next = head;
-    head.previous.delete();  
+  if(node.head =! null){
+    new node 
+    node.next = head 
+    head = node
   }
   
+
+// if head and tail aren't null and are the same
+//  ...
+// else aren't null
+//  ...
+// else          <are null>
+//  do nothing
+//
+
+// FROM:
+//
+//      H                          T
+//    { first } -> { middle } -> { last }
+//
+// TO:
+//       H             T
+//     { middle } -> { last }
+//
+
+
 }
 
 function removeNodeAfterCurrentHead(){
-  if(node.previous == null && node.next != null){
-    let current.next = head;
-    head.previous.delete();
+  if(head.next != null ){
+    tempNode = head.next
+    head = tempNode.next
+  }else{
+    let node = new LinkedListNode(); 
+    node = head
+    node = tail
+  }
+}
+
+function returnNodePosition(first,index_input){
+    if(first.next === index_input){
+      return first.next   
+    }else{
+      first = first.next
+    }
+}
+
+
+
+
+
+
+function removeCurrentTail(){
+  if(node.next.next.next == null){
+    tail = node.next
+    tail.next = null
   }
 }
 
